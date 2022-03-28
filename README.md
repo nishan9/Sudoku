@@ -9,9 +9,9 @@ Sudoku is a puzzle in which the objective is to find the suitable numbers from 1
 4. The sum of every single row, column and nonet must equal to 45, the entire solved puzzle must sum to 405.
  
 > **Note:** Sudoku solvers are usually implemented to solve only solvable puzzles but for the purpose of this assignment, we also take impossible sudokus into account.
- 
-## Implementing Solutions
-One way to go about solving sudoku is to try all combinations, while this certainly would work given the size and the possibilities of sudoku leads to over 6×10<sup>21</sup> possibilities. Given the current computing power this would take an astronomical amount of time. However, there are various algorithms which can solve sudokus in a far shorter time.
+
+One way to go about solving sudoku is to try all combinations, while this certainly would work given the number of possibilities in sudoku this leads to over 6×10<sup>21</sup> possibilities. Hence, there are various algorithms which we can look at to solve it in a far shorter time.
+
  
 ## A simple backtracking algorithm
 Initially, I implemented a backtracking algorithm which would recursively guess the value for each cell. The implementation was simple,
@@ -40,13 +40,15 @@ Sudoku is a problem that respects both of these assumptions, given that the rule
  
 **Sudoku as a constraint propagation problem** - Any empty cell in sudoku has the possibility of being a number from 1 through to 9 given that the same number is not on its row, column or its nonet.
  
-The figure below demonstrates the dramatic reduction in problem space offered via constraint propagation. The below example is only with one number on the board, with several numbers the possibilities reduce much further. 
+The figure below demonstrates the drastic reduction in problem space offered via constraint propagation. The below example is only with one number on the board, with several numbers the possibilities reduce much further. 
  
 ![image info](Constraint.png)
 
 # Improving Performance Further
 
-The final implementation of my solver: The algorithm was further enhanced with 3 additional functions (``validRows`` , ``validColumns`` and ``validBoxes``) to check for invalid sudokus before trying to solve the puzzle. Then using contraint propogation to narrow the problem space (``constraintCheck``) and finally passing to an iterative function to perform depth first search and constraint propogation recusively (``search``). 
+The final implementation of my solver: The algorithm was further enhanced with 3 additional functions (``validRows`` , ``validColumns`` and ``validBoxes``) to check for invalid sudokus before trying to solve the puzzle. Then using constraint propogation to narrow the problem space (``constraintCheck``) and finally passing to an iterative function to perform depth first search and constraint propogation recusively (``search``). 
+
+We can also use language-specific tools to optimize algorithmic performance, to implement the solution I have utilised a wide range of such tools including, using numpy, list comprehension, itertools and builtin functions such as ``sum``. 
  
 ## Performance Metrics
  
@@ -71,14 +73,7 @@ Below are some of the results that were gathered during testing.
 | AI Escargot      | 2.178       |   1.038           |
 | All Sudokus (provided with this task)   | < 600        |  8.610 |
  
-The above results show a dramatic difference given the inputs. The problem lies with the unsolvable sudokus, the minimized problem space tackles this exception quite well. The bigger problem size took significantly longer to execute was to sum the sudoku grid as a final check to be equal to 405.
- 
-## Optimizing algorithmic performance through language-specific tools
- 
-- Using numpy
-- Using list comprehension
-- Using itertools
-- Using builtin functions such as sum
+The above results show a drastic difference given the inputs. The problem lies with the unsolvable sudokus, the minimized problem space tackles this exception quite well. The bigger problem size took significantly longer to execute was to sum the sudoku grid as a final check to be equal to 405.
  
 ## Future Works
  
@@ -96,9 +91,7 @@ This is an example of a basic strategy, however more complex and often better st
  
 ### Better algorithms 
  
-Through further research I discovered more efficient algorithms that appear to solve sudoku. An algorithm that appears to work particularly well is through presenting sudoku as an **Exact Cover Problem** and solving it with **Donald Knuth's Algorithm X**. Exact cover, as the name suggests, is about finding a solution (combination) so that each of the element is covered exactly once (G, 2011).
-
-
+Through further research I discovered more efficient algorithms that appear to solve sudoku. An algorithm that appears to work particularly well is through presenting sudoku as an **Exact Cover Problem** and solving it with **Donald Knuth's Algorithm X**. Exact cover is way of generalising a problem (such as sudoku) to solve it with algorithms such as Algorithm X to find all solutions (G, 2011).
 
 ## Bibliography
 
