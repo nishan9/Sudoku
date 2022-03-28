@@ -1,7 +1,7 @@
 # Sudoku Solver
  
 ## Introduction
-Sudoku is a puzzle in which the objective is to find the suitable numbers from 1 through to 9 for each cell adhering to the rules of the game. There are four golden rules in the game (Sudoku Online, 2020):
+Sudoku is a puzzle in which the objective is to find the suitable numbers from 1 through to 9 for each cell adhering to the rules of the game. There are four principal rules in the game (Sudoku Online, 2020):
  
 1. Each row must contain numbers from 1 to 9 without any repetitions.
 2. Each column must contain numbers from 1 to 9 without any repetitions.
@@ -96,7 +96,7 @@ This is an example of a basic strategy, however more complex and often better st
  
 ### Better algorithms 
  
-Through further research I discovered more efficient algorithms that appear to solve sudoku. An algorithm that appears to work particularly well is through presenting sudoku as an **exact cover problem** and solving it with **algorithm X**. Exact cover, as the name suggests, is about finding a solution (combination) so that each of the element is covered exactly once (G, 2011).
+Through further research I discovered more efficient algorithms that appear to solve sudoku. An algorithm that appears to work particularly well is through presenting sudoku as an **Exact Cover Problem** and solving it with **Donald Knuth's Algorithm X**. Exact cover, as the name suggests, is about finding a solution (combination) so that each of the element is covered exactly once (G, 2011).
 
 
 
