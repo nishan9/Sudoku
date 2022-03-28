@@ -99,6 +99,10 @@ Available at: https://gieseanw.wordpress.com/2011/06/16/solving-sudoku-revisited
 
 Kenneth, N., Brown & Miguel, I., 2006. Foundations of Artificial Intelligence. 2nd ed. s.l.:Elsevier.
 
+Stuart, A., 2008. Sudoku Wiki. [Online] 
+Available at: https://www.sudokuwiki.org/Hidden_Candidates
+[Accessed 28 March 2022].
+
 Stuart, A., 2008. sudokuwiki.org/Escargot. [Online] 
 Available at: https://www.sudokuwiki.org/Escargot
 [Accessed 28 March 2022].
