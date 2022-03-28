@@ -48,7 +48,7 @@ The figure below demonstrates the drastic reduction in problem space offered via
 
 The final implementation of my solver: The algorithm was further enhanced with 3 additional functions (``validRows`` , ``validColumns`` and ``validBoxes``) to check for invalid sudokus before trying to solve the puzzle. Then using constraint propogation to narrow the problem space (``constraintCheck``) and finally passing to an iterative function to perform depth first search and constraint propogation recusively (``search``). 
 
-We can also use language-specific tools to optimize algorithmic performance, to implement the solution I have utilised a wide range of such tools including, using numpy, list comprehension, itertools and builtin functions such as ``sum``. 
+We can also use language-specific tools to optimize algorithmic performance. To implement the solution I have utilised a wide range of such tools including, using numpy, list comprehension, itertools and builtin functions such as ``sum``. 
  
 ## Performance Metrics
  
