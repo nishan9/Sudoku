@@ -81,9 +81,7 @@ The above results show a drastic difference given the inputs. The problem lies w
 
 We can look further into reducing the problem space. In addition to constraint propagation, we can also utilize some other sudoku strategies. One such example is “Hidden Pairs”. A hidden pair occurs when a pair of numbers appears in exactly two squares in a row, column, or block, but those two numbers aren't the only ones in their squares.
  
-![image info](https://www.sudokuwiki.org/PuzImages/HP1.png)
- 
-Source: https://www.sudokuwiki.org/PuzImages/HP1.png
+![image info](https://www.sudokuwiki.org/PuzImages/HP1.png) (Stuart, 2008)
  
 In the above example, the 7 and 6 highlighted in green are a hidden pair. The 7 and 6 only occur in those two squares and nowhere else in the row, so those two squares can only contain 7 and 6 and no other numbers. Hence, we can eliminate other candidates in those squares, as highlighted in yellow. 
  
