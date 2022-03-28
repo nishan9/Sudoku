@@ -1,4 +1,4 @@
-### Sudoku Solver
+# Sudoku Solver
  
 ## Introduction
 Sudoku is a puzzle in which the objective is to find the suitable numbers from 1 through to 9 for each cell adhering to the rules of the game. There are four golden rules in the game (Sudoku Online, 2020):
@@ -22,11 +22,11 @@ Initially, I implemented a backtracking algorithm which would recursively guess 
 4. If yes, backtrack to the last entered number and try other numbers.  
 5. Iterate through the implementation until the entire grid results in a total sum of 405.
  
-While this solution was successful and was able to solve every solvable puzzle in under a mere second. The algorithm struggled with unsolvable puzzles. As there are so many values to iterate over, to optimize this would be to  
+While this solution was successful and was able to solve every solvable puzzle in under a mere second, the algorithm struggled with unsolvable puzzles given the excessively large problem space. To improve to this would be to reduce the problem space. 
  
 ## My solution
  
-# Constraint Propagation
+### Constraint Propagation
  
 Constraint Propagation is a successful technique, where we describe the world in terms of decision variables that must be assigned values, we place explicit restriction on the values that are assigned henceforth. This leads to two assumptions about the problem (Kenneth, et al., 2006).
  
@@ -40,19 +40,31 @@ Sudoku is a problem that respects both of these assumptions, given that the rule
  
 **Sudoku as a constraint propagation problem** - Any empty cell in sudoku has the possibility of being a number from 1 through to 9 given that the same number is not on its row, column or its nonet.
  
-The figure below demonstrates the dramatic reduction in problem space offered via constraint propagation.
+The figure below demonstrates the dramatic reduction in problem space offered via constraint propagation. The below example is only with one number on the board, with several numbers the possibilities reduce much further. 
  
 ![image info](Constraint.png)
 
 # Improving Performance Further
 
-The final implementation of my solver, the algorithm was further enhanced with 3 additioanls functions (``validRows`` , ``validColumns`` and ``validBoxes``) to check for invalid sudokus before trying to solve the puzzle. Then using contraint propogation to narrow the problem space (``constraintCheck``) and finally passing to an iterative function to perform depth first search and constraint propogation recusively (``search``). 
+The final implementation of my solver: The algorithm was further enhanced with 3 additional functions (``validRows`` , ``validColumns`` and ``validBoxes``) to check for invalid sudokus before trying to solve the puzzle. Then using contraint propogation to narrow the problem space (``constraintCheck``) and finally passing to an iterative function to perform depth first search and constraint propogation recusively (``search``). 
  
 ## Performance Metrics
  
-Both implementations were sufficiently fast for the purpose of this assignment, both algorithms solving hard solvable sudokus under a second.
- 
-To measure the performance of algorithms I used different inputs. Below are some of the results that were gathered during testing.
+Both implementations were sufficiently fast, solving even hard solvable sudokus under a second. To benchmark performance of the algorithms I used two different inputs. All of the puzzles offered as a part of this task and also the "World's hardest Sudoku" known as "AI Escargot" (Stuart, 2008). 
+
+```
+[[8 0 0 0 0 0 0 0 0]
+ [0 0 3 6 0 0 0 0 0] 
+ [0 7 0 0 9 0 2 0 0] 
+ [0 5 0 0 0 7 0 0 0] 
+ [0 0 0 0 4 5 7 0 0] 
+ [0 0 0 1 0 0 0 3 0] 
+ [0 0 1 0 0 0 0 6 8] 
+ [0 0 8 5 0 0 0 1 0] 
+ [0 9 0 0 0 0 4 0 0]]
+```
+
+Below are some of the results that were gathered during testing.
  
 | Problem   | Depth first search backtrack algorithm execution time (in s)  | Depth first search with backtracking and constraint propagation execution time (in s) |
 | ----------- | ----------- | ------------------ |
@@ -95,6 +107,10 @@ Available at: https://gieseanw.wordpress.com/2011/06/16/solving-sudoku-revisited
 [Accessed 28 March 2022].
 
 Kenneth, N., Brown & Miguel, I., 2006. Foundations of Artificial Intelligence. 2nd ed. s.l.:Elsevier.
+
+Stuart, A., 2008. sudokuwiki.org/Escargot. [Online] 
+Available at: https://www.sudokuwiki.org/Escargot
+[Accessed 28 March 2022].
 
 Sudoku Online, 2020. Sudoku Rules: Sudoku Online. [Online] 
 Available at: https://www.sudokuonline.io/tips/sudoku-rules
